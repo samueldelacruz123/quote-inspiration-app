@@ -1,11 +1,11 @@
-const STORAGE_KEY = 'quote_image_gallery';
+const STORAGE_KEY = 'quote_image_gallery_v1';
 
 export function saveToGallery(quote, image) {
   const existing = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
   const newEntry = {
-    quote,
-    image,
+    quote: { text: quote.text, author: quote.author },
+    image: { url: image.url, photographer: image.photographer, photographerLink: image.photographerLink },
     timestamp: Date.now()
   };
 

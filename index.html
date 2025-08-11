@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quote & Image Inspiration App</title>
-  <link rel="stylesheet" href="styles/style.css" />
-</head>
-<body>
-  <main>
-    <section class="quote-container fade-in">
-      <p id="quote-text">Loading quote...</p>
-      <p id="quote-author">-</p>
-    </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote & Image Inspiration App</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- WRAPPED FOR SCREENSHOT -->
+      <div id="inspiration-container">
+        <section class="quote-container fade-in">
+          <p id="quote-text">Loading quote...</p>
+          <p id="quote-author">-</p>
+        </section>
 
-    <section class="image-container fade-in">
-      <img id="inspiration-image" src="" alt="Inspiration Image" />
-      <p class="credit">
-        Photo by <a id="photographer-link" href="#" target="_blank">
-        <span id="photographer-name">Unknown</span></a> on Unsplash
-      </p>
-    </section>
+        <section class="image-container fade-in">
+          <img id="inspiration-image" src="" alt="Inspiration Image" loading="lazy" />
+          <p class="credit">
+            Photo by <a id="photographer-link" href="#" target="_blank" rel="noopener">
+            <span id="photographer-name">Unknown</span></a> on Unsplash
+          </p>
+        </section>
+      </div>
 
-    <div class="button-group">
-      <button id="inspire-btn">Get Inspired</button>
-      <button id="save-btn">Save to Gallery</button>
-      <button id="view-gallery-btn">View Gallery</button>
-      <button id="share-btn">Share</button>
+      <div class="button-group">
+        <button id="inspire-btn">Get Inspired</button>
+        <button id="save-btn">Save to Device</button>
+        <button id="share-btn">Share</button>
+      </div>
+    </main>
+
+    <!-- Gallery Modal (optional, not used now for screenshots) -->
+    <div id="gallery-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="gallery-title">
+      <div class="modal-content">
+        <button class="close-btn" id="close-gallery" aria-label="Close gallery">&times;</button>
+        <h2 id="gallery-title">Your Gallery</h2>
+        <div id="gallery-cards" class="gallery-grid"></div>
+      </div>
     </div>
-  </main>
 
-  <!-- Gallery Modal -->
-  <div id="gallery-modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-btn" id="close-gallery">&times;</span>
-      <h2>Your Gallery</h2>
-      <div id="gallery-cards" class="gallery-grid"></div>
-    </div>
-  </div>
-
-  <script type="module" src="js/main.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
