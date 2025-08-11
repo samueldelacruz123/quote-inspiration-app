@@ -4,10 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quote & Image Inspiration App</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <h1>Check the Console</h1>
+  <main>
+    <section class="quote-container fade-in">
+      <p id="quote-text">Loading quote...</p>
+      <p id="quote-author">-</p>
+    </section>
 
-  <script type="module" src="./js/main.js"></script>
+    <section class="image-container fade-in">
+      <img id="inspiration-image" src="" alt="Inspiration Image" />
+      <p class="credit">
+        Photo by <a id="photographer-link" href="#" target="_blank">
+        <span id="photographer-name">Unknown</span></a> on Unsplash
+      </p>
+    </section>
+
+    <div class="button-group">
+      <button id="inspire-btn">Get Inspired</button>
+      <button id="save-btn">Save to Gallery</button>
+      <button id="view-gallery-btn">View Gallery</button>
+      <button id="share-btn">Share</button>
+    </div>
+  </main>
+
+  <!-- Gallery Modal -->
+  <div id="gallery-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" id="close-gallery">&times;</span>
+      <h2>Your Gallery</h2>
+      <div id="gallery-cards" class="gallery-grid"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
