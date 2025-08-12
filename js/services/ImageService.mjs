@@ -11,7 +11,7 @@ export async function getRandomImage() {
     return {
       url: data.urls.regular,
       photographer: data.user.name,
-      photographerUrl: data.user.links.html
+      photographerUrl: data.user.links.html //
     };
   } catch (err) {
     console.error('Error fetching image:', err);

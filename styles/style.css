@@ -87,6 +87,7 @@ main {
   color: white;
   border-radius: 8px;
   cursor: pointer;
+/**/
   transition: transform 0.12s ease, background-color 0.18s ease;
   box-shadow: 0 4px 14px rgba(0,119,204,0.12);
 }
@@ -95,45 +96,7 @@ main {
   background-color: #0062a8;
   transform: translateY(-2px);
 }
-
-/* Gallery Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(2,6,23,0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.hidden {
-  display: none;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 1.5rem;
-  max-width: 900px;
-  width: 95%;
-  border-radius: 12px;
-  position: relative;
-  max-height: 85vh;
-  overflow-y: auto;
-}
-
-.close-btn {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  font-size: 1.4rem;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
+/**/
 
 /* Gallery Cards */
 .gallery-grid {
@@ -145,6 +108,7 @@ main {
 
 .quote-image-card,
 .gallery-card {
+  max-width: 350px;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 0.9rem;
@@ -257,4 +221,54 @@ main {
 
 @media (max-width: 420px) {
   #quote-text { font-size: 1.125rem; }
+}
+
+/* Gallery Cards */
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.card-actions button {
+  padding: 0.45rem 0.6rem;
+  border: none;
+  background: #222; /* 🔹 Dark background for visibility */
+  color: #fff;      /* 🔹 White text */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.card-actions button:hover {
+  background: #444; /* 🔹 Slightly lighter hover */
+}
+
+.delete-btn {
+  background: #ff6464 !important;
+  color: white;
+}
+
+.delete-btn:hover {
+  filter: brightness(0.95);
+}
+
+.twitter-btn {
+  background: #1da1f2 !important;
+  color: white;
+}
+
+.facebook-btn {
+  background: #1877f2 !important;
+  color: white;
+}
+
+/* --- New: Class for screenshot background --- */
+.screenshot-bg {
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
 }
